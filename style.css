@@ -1,0 +1,67 @@
+:root {
+    --neon-blue: #00d2ff;
+    --neon-purple: #9d00ff;
+    --neon-green: #39ff14;
+    --black-absolute: #000000;
+}
+
+body {
+    background-color: var(--black-absolute);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+}
+
+/* Patrón de rejilla */
+.grid-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                      linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Animación Latido */
+@keyframes heartbeat {
+    0% { transform: scale(1); box-shadow: 0 0 5px var(--neon-blue); }
+    15% { transform: scale(1.1); box-shadow: 0 0 20px var(--neon-blue); }
+    30% { transform: scale(1); box-shadow: 0 0 5px var(--neon-blue); }
+}
+
+.profile-img-heartbeat {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--neon-blue);
+    cursor: pointer;
+    animation: heartbeat 2s infinite;
+}
+
+/* Tarjetas */
+.currency-card {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.currency-card.blue { border-left: 5px solid var(--neon-blue); border-right: 5px solid var(--neon-blue); }
+.currency-card.purple { border-left: 5px solid var(--neon-purple); border-right: 5px solid var(--neon-purple); }
+.currency-card.green { border-left: 5px solid var(--neon-green); border-right: 5px solid var(--neon-green); }
+
+.currency-card:hover {
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.4);
+}
+
+.flag-icon { width: 40px; height: 40px; border-radius: 50%; }
+
+.badge-neon { border: 1px solid var(--neon-blue); color: var(--neon-blue); background: none; margin: 2px; }
+
+/* Modal Estilos */
+.border-double-neon {
+    border: 4px double var(--neon-purple);
+    padding: 5px;
+}
